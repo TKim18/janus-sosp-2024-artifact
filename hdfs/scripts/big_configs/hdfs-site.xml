@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>dfs.replication</name>
+		<value>3</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.blocksize</name>
+		<value>8388608</value>
+		<description>block size</description>
+	</property>
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>file:///mnt/ext4/dfs/data</value>
+		<description>directory on datanodes</description>
+	</property>
+	<property>
+		<name>dfs.namenode.fs-limits.min-block-size</name>
+		<value>1048576</value>
+		<description>min block size</description>
+	</property>
+	<property>
+		<name>dfs.namenode.ec.policies.max.cellsize</name>
+		<value>8388608</value>
+		<description>max cell size</description>
+	</property>
+	<property>
+		<name>dfs.namenode.redundancy.considerLoad</name>
+		<value>false</value>
+		<description>setting to false to allow for more options</description>
+	</property>
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>8388608</value>
+		<description>io size</description>
+	</property>
+	<property>
+		<name>dfs.datanode.readahead.bytes</name>
+		<value>8388608</value>
+		<description>read ahead size</description>
+	</property>
+	<property>
+		<name>dfs.datanode.ec.reconstruction.stripedread.buffer.size</name>
+		<value>1048576</value>
+		<description>striped read buffer size</description>
+	</property>
+	<property>
+		<name>dfs.namenode.heartbeat.recheck-interval</name>
+		<value>150000</value>
+		<description>heartbeat time</description>
+	</property>
+	<property>
+		<name>dfs.client.retry.max.attempts</name>
+		<value>10</value>
+		<description>set to 10 for dual hybrid read, 9 for striped read, 8 for replica read</description>
+	</property>
+	<property>
+		<name>dfs.client.hedged.read.threadpool.size</name>
+		<value>0</value>
+		<description>set to 0 for nonhedged read, any non-zero value for hedged read</description>
+	</property>
+
+</configuration>
