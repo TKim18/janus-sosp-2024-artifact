@@ -19,6 +19,6 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://h0.vanilla-hadoop-test.hearty.narwhal.pdl.cmu.edu:9000</value>
+        <value>hdfs://h0-dfge:9000</value>
     </property>
 </configuration>

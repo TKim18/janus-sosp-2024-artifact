@@ -772,8 +772,6 @@ public class NameNodeRpcServer implements NamenodeProtocols {
     metrics.incrGetBlockLocations();
     LocatedBlocks locatedBlocks =
         namesystem.getBlockLocations(getClientMachine(), src, offset, length);
-    LOG.info("Done retrieving block locations, located blocks has stripe width={}",
-        locatedBlocks.getErasureCodingPolicy().getStripeWidth());
     return locatedBlocks;
   }
   

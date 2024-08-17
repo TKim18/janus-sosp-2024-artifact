@@ -296,8 +296,8 @@ public class DFSStripedOutputStream extends DFSOutputStream
     // this is the number of parity blocks in a group
     numParityBlocksInGroup = ecPolicy.getNumParityUnits();
     // this is the number of data blocks that span a stripe
-    numDataBlocksInStripe = dfsClient.getConf().getDefaultReplication();
-//    numDataBlocksInStripe = ecPolicy.getStripeWidth() != 0 ? ecPolicy.getStripeWidth() : numDataBlocksInGroup;
+//    numDataBlocksInStripe = dfsClient.getConf().getDefaultReplication();
+    numDataBlocksInStripe = ecPolicy.getStripeWidth() != 0 ? ecPolicy.getStripeWidth() : numDataBlocksInGroup;
 
     LOG.info("Configs: stripe size = {}, block size = {},  ecpolicy name = {}",
       numDataBlocksInStripe, blockSize, ecPolicy.getCodecName());

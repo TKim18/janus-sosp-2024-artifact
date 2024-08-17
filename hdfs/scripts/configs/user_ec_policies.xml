@@ -28,96 +28,111 @@
     schema id and cellsize.
 -->
 <configuration>
-<layoutversion>1</layoutversion>
-<schemas>
-  <schema id="XORk2m1">
-    <codec>xor</codec>
-    <k>2</k>
-    <m>1</m>
-    <options> </options>
-  </schema>
-  <schema id="XORk3m1">
-    <codec>xor</codec>
-    <k>3</k>
-    <m>1</m>
-    <options> </options>
-  </schema>
-  <schema id="XORk4m1">
-    <codec>xor</codec>
-    <k>4</k>
-    <m>1</m>
-    <options> </options>
-  </schema>
-  <schema id="XORk5m1">
-    <codec>xor</codec>
-    <k>5</k>
-    <m>1</m>
-    <options> </options>
-  </schema>
+  <layoutversion>1</layoutversion>
+  <schemas>
+    <schema id="RSk5m3">
+      <codec>rs</codec>
+      <k>5</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="RSk6m3">
+      <codec>rs</codec>
+      <k>6</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="RSk10m3">
+      <codec>rs</codec>
+      <k>10</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="RSk12m3">
+      <codec>rs</codec>
+      <k>12</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="RSk20m3">
+      <codec>rs</codec>
+      <k>20</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
 
-  <schema id="RSk3m2">
-    <codec>rs</codec>
-    <k>3</k>
-    <m>2</m>
-    <options> </options>
-  </schema>
-  <schema id="RSk4m2">
-    <codec>rs</codec>
-    <k>4</k>
-    <m>2</m>
-    <options> </options>
-  </schema>
+    <schema id="CCk5m3">
+      <codec>cc</codec>
+      <k>5</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="CCk6m3">
+      <codec>cc</codec>
+      <k>6</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="CCk10m3">
+      <codec>cc</codec>
+      <k>10</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="CCk12m3">
+      <codec>cc</codec>
+      <k>12</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+    <schema id="CCk20m3">
+      <codec>cc</codec>
+      <k>20</k>
+      <m>3</m>
+      <options> </options>
+    </schema>
+  </schemas>
+  <policies>
+    <policy>
+      <schema>RSk5m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>RSk6m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>RSk10m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>RSk12m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>RSk20m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
 
-</schemas>
-<policies>
-  <policy>
-    <schema>XORk2m1</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk3m1</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk4m1</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk5m1</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-  <policy>
-    <schema>RSk3m2</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-  <policy>
-    <schema>RSk4m2</schema>
-    <cellsize>4096</cellsize>
-  </policy>
-
-  <policy>
-    <schema>XORk2m1</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk3m1</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk4m1</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-  <policy>
-    <schema>XORk5m1</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-  <policy>
-    <schema>RSk3m2</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-  <policy>
-    <schema>RSk4m2</schema>
-    <cellsize>1024</cellsize>
-  </policy>
-</policies>
+    <policy>
+      <schema>CCk5m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>CCk6m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>CCk10m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>CCk12m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+    <policy>
+      <schema>CCk20m3</schema>
+      <cellsize>8388608</cellsize>
+    </policy>
+  </policies>
 </configuration>

@@ -1,1 +1,0 @@
-cd ../hadoop-hdfs-project && mvn clean install -e -Pdist,native -DskipTests -Dmaven.javadoc.skip=true -Drequire.isal -Disal.lib=/usr/lib -Dbundle.isal && cd ../hadoop-client-modules/hadoop-client && mvn clean install -e -Pdist,native -DskipTests -Dmaven.javadoc.skip=true -Drequire.isal -Disal.lib=/usr/lib -Dbundle.isal && cd ../../scripts
