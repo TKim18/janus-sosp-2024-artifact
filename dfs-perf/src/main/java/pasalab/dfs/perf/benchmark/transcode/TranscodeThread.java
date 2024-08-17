@@ -57,7 +57,7 @@ public class TranscodeThread extends PerfThread {
         if (mId % 2 == 0 && (System.currentTimeMillis() - lastCleared) > 30000) {
           lastCleared = System.currentTimeMillis();
           // only one node for every client should execute
-          Process p = Runtime.getRuntime().exec("/bin/bash /users/ttk2/exec_scripts/clear_cache.sh");
+          Process p = Runtime.getRuntime().exec("/bin/bash /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/clear_cache.sh");
           p.waitFor();
           if (p.getInputStream().available() > 0) {
             LOG.info("Successfully dropped buffer caches");
@@ -170,9 +170,9 @@ public class TranscodeThread extends PerfThread {
 
   private String determineTargetPath(RedundancyStatus newStatus) {
     if (newStatus == RedundancyStatus.EC53) {
-      return "/ec53rs/simple-read-write/" + mTaskId;
+      return "/ec53cc/simple-read-write/" + mTaskId;
     } else if (newStatus == RedundancyStatus.EC103) {
-      return "/ec103rs/simple-read-write/" + mTaskId;
+      return "/ec103cc/simple-read-write/" + mTaskId;
     } else if (newStatus == RedundancyStatus.EC203) {
       return "/ec203cc/simple-read-write/" + mTaskId;
     } else {

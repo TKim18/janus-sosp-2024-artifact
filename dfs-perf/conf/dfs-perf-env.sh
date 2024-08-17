@@ -23,24 +23,13 @@ export DFS_PERF_DFS_ADDRESS="hdfs://h0-dfge:9000"
 #export DFS_PERF_WORKSPACE="/tmp/dfs-perf-workspace"
 # unused field currently
 export DFS_PERF_WORKSPACE="/rr3"
-#export DFS_PERF_WORKSPACE="/ec11_4"
-#export DFS_PERF_WORKSPACE="/ec11_8"
-#export DFS_PERF_WORKSPACE="/ec21_12"
-#export DFS_PERF_WORKSPACE="/ec21_16"
-#export DFS_PERF_WORKSPACE="/ec31_24"
-#export DFS_PERF_WORKSPACE="/ec41_32"
-#export DFS_PERF_WORKSPACE="/ec63cc"
-#export DFS_PERF_WORKSPACE="/ec53rs"
-#export DFS_PERF_WORKSPACE="/ec63rs_1copy"
-#export DFS_PERF_WORKSPACE="/ec63rs_2copy"
-
-
+#export DFS_PERF_WORKSPACE="/ec53cc"
 
 #the report output path
 export DFS_PERF_OUT_DIR="$DFS_PERF_HOME/result"
 
 #the dfs-perf master service address
-DFS_PERF_MASTER_HOSTNAME="h20-dfge"
+DFS_PERF_MASTER_HOSTNAME="h24-dfge"
 DFS_PERF_MASTER_PORT=23333
 
 #the slave is considered to be failed if not register in this time

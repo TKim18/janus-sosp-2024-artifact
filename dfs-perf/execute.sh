@@ -1,0 +1,1 @@
+./bin/dfs-perf "SimpleWrite"

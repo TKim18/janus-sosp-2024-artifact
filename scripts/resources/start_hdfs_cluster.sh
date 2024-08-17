@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # define absolute path
 workspace_dir="/proj/HeARTy/ceridwen-sosp-2024-artifact"
 
@@ -20,8 +22,6 @@ export HADOOP_YARN_HOME=${HADOOP_HOME}
 export HADOOP_HDFS_HOME=${HADOOP_HOME}
 export YARN_HOME=${HADOOP_HOME}
 export PDSH_RCMD_TYPE=ssh
-export http_proxy=http://proxy.pdl.cmu.edu:3128/
-export https_proxy=http://proxy.pdl.cmu.edu:3128/
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 
