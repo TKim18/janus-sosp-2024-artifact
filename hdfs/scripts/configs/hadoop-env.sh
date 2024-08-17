@@ -17,7 +17,7 @@
 
 # Set Hadoop-specific environment variables here.
 
-HADOOP_HOME="/proj/HeARTy/dare-hadoop/hadoop-dist/target/hadoop-3.3.1"
+HADOOP_HOME="/proj/HeARTy/ceridwen-sosp-2024-artifact/hadoop-dist/target/hadoop-3.3.1"
 PATH=$PATH:$HADOOP_HOME/bin
 PATH=$PATH:$HADOOP_HOME/sbin
 HADOOP_MAPRED_HOME=${HADOOP_HOME}
