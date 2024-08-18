@@ -9,12 +9,13 @@
 
 # first run baseline results
 ./begin_recording.sh baseline
-sleep 5
+sleep 10
 
 cd ../dfs-perf
 
 # set config
-sed 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
+sed -i 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
+sed -i 's/"dfs.replication", "2"/"dfs.replication", "3"/g' src/main/java/pasalab/dfs/perf/fs/PerfFileSystemHdfs.java
 
 # build the project
 bash install-dfs-perf.sh
@@ -23,7 +24,7 @@ bash install-dfs-perf.sh
 ./execute.sh
 cd -
 
-sleep 5
+sleep 10
 ./end_recording.sh baseline
 
 # then run ceridwen results
