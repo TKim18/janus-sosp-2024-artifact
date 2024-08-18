@@ -25,6 +25,7 @@ export PDSH_RCMD_TYPE=ssh
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 
+echo "$HADOOP_COMMON_HOME"
 # start cluster
 "$HADOOP_HOME"/bin/hdfs namenode -format hdfs-cluster
 "$HADOOP_HOME"/sbin/start-dfs.sh
