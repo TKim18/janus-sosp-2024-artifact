@@ -17,14 +17,14 @@
 
 # Set Hadoop-specific environment variables here.
 
-#HADOOP_HOME="/proj/HeARTy/ceridwen-sosp-2024-artifact/hadoop-dist/target/hadoop-3.3.1"
-#PATH=$PATH:$HADOOP_HOME/bin
-#PATH=$PATH:$HADOOP_HOME/sbin
-#HADOOP_MAPRED_HOME=${HADOOP_HOME}
-#HADOOP_COMMON_HOME=${HADOOP_HOME}
-#HADOOP_YARN_HOME=${HADOOP_HOME}
-#HADOOP_HDFS_HOME=${HADOOP_HOME}
-#YARN_HOME=${HADOOP_HOME}
+HADOOP_HOME="/proj/HeARTy/ceridwen-sosp-2024-artifact/hadoop-dist/target/hadoop-3.3.1"
+PATH=$PATH:$HADOOP_HOME/bin
+PATH=$PATH:$HADOOP_HOME/sbin
+HADOOP_MAPRED_HOME=${HADOOP_HOME}
+HADOOP_COMMON_HOME=${HADOOP_HOME}
+HADOOP_YARN_HOME=${HADOOP_HOME}
+HADOOP_HDFS_HOME=${HADOOP_HOME}
+YARN_HOME=${HADOOP_HOME}
 
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 PDSH_RCMD_TYPE="ssh"
