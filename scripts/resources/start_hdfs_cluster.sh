@@ -69,10 +69,10 @@ hdfs dfs -mkdir /ec63cc
 hdfs ec -setPolicy -path /ec63cc -policy CC-6-3-8192k
 
 hdfs dfs -mkdir /ec103cc
-hdfs ec -setPolicy -path /ec103cc -policy RS-10-3-8192k
+hdfs ec -setPolicy -path /ec103cc -policy CC-10-3-8192k
 
 hdfs dfs -mkdir /ec123cc
 hdfs ec -setPolicy -path /ec123cc -policy CC-12-3-8192k
 
 hdfs dfs -mkdir /ec203cc
-hdfs ec -setPolicy -path /ec203cc -policy RS-20-3-8192k
+hdfs ec -setPolicy -path /ec203cc -policy CC-20-3-8192k
