@@ -1,3 +1,4 @@
+# set env variables
 export HADOOP_HOME="/proj/HeARTy/ceridwen-sosp-2024-artifact/hdfs/hadoop-dist/target/hadoop-3.3.1"
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
