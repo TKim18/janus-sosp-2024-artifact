@@ -7,13 +7,15 @@
 # of getting Ganglia set up and getting access to the results, we omit those metrics.
 # After running this script, you must run stop_recording to stop the telemetry and collect the data.
 
+WORKLOAD=$1
+
 # re-initialize results directory
-rm -f results/blktrace_raw
-rm -f results/seekwatcher
-rm -f results/space
-mkdir -p results/blktrace_raw
-mkdir -p results/seekwatcher
-mkdir -p results/space
+rm -f results/"$WORKLOAD"/blktrace_raw
+rm -f results/"$WORKLOAD"/seekwatcher
+rm -f results/"$WORKLOAD"/space
+mkdir -p results/"$WORKLOAD"/blktrace_raw
+mkdir -p results/"$WORKLOAD"/seekwatcher
+mkdir -p results/"$WORKLOAD"/space
 
 machines=(
 "h1" "h2" "h3" "h4" "h5" "h6" "h7" "h8" "h9" "h10" "h11" "h12" "h13"
@@ -23,6 +25,6 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/resources/start_recording.sh $(pwd)/results" >> logs 2>> logs &
+    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/begin_recording.sh $(pwd)/results/${WORKLOAD}" >> logs 2>> logs &
     i=$(($i+1))
 done

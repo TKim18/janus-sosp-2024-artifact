@@ -7,13 +7,16 @@
 # 3. make sure to build dfs perf from source
 # 3. run write from node
 
-./start_recording.sh
+# first run baseline results
+./begin_recording.sh baseline
 sleep 5
 
-# for now let's assume it's just one code-base and it's the baseline workload
+cd ../dfs-perf
+
+# set config
+sed 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
 
 # build the project
-cd ../dfs-perf
 bash install-dfs-perf.sh
 
 # execute the workload
@@ -21,4 +24,6 @@ bash install-dfs-perf.sh
 cd -
 
 sleep 5
-./stop_recording.sh
+./stop_recording.sh baseline
+
+# then run ceridwen results
