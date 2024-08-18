@@ -12,23 +12,8 @@ bash install-hdfs.sh
 # copy configs to dist configs
 cp configs/* "${workspace_dir}/hdfs/hadoop-dist/target/hadoop-3.3.1/etc/hadoop/"
 
-# set env variables
-export HADOOP_HOME="${workspace_dir}/hdfs/hadoop-dist/target/hadoop-3.3.1"
-export PATH=$PATH:$HADOOP_HOME/bin
-export PATH=$PATH:$HADOOP_HOME/sbin
-export HADOOP_MAPRED_HOME=${HADOOP_HOME}
-export HADOOP_COMMON_HOME=${HADOOP_HOME}
-export HADOOP_YARN_HOME=${HADOOP_HOME}
-export HADOOP_HDFS_HOME=${HADOOP_HOME}
-export YARN_HOME=${HADOOP_HOME}
-export PDSH_RCMD_TYPE=ssh
-export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
-
-echo "$HADOOP_COMMON_HOME"
-# start cluster
-"$HADOOP_HOME"/bin/hdfs namenode -format hdfs-cluster
-"$HADOOP_HOME"/sbin/start-dfs.sh
+# start
+bash start-dfs.sh
 
 # add policies
 hdfs ec -addPolicies -policyFile "${workspace_dir}/hdfs/scripts/configs/user_ec_policies.xml"
