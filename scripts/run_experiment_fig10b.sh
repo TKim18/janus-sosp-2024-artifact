@@ -24,6 +24,6 @@ bash install-dfs-perf.sh
 cd -
 
 sleep 5
-./stop_recording.sh baseline
+./end_recording.sh baseline
 
 # then run ceridwen results

@@ -1,18 +1,18 @@
 # This script is used to prepare and start the telemetry that we use to collect data.
-# This script can be called in other experiment scripts with stop_recording.
+# This script can be called in other experiment scripts with end_recording.
 # Specifically, the two things we'll collect during this artifact evaluation is
 # 1. storage space used (df -k)
 # 2. disk bandwidth used (blktrace+blkparse+seekwatcher)
 # In the paper submission's evaluation, we also include network metrics but due to the complexities
 # of getting Ganglia set up and getting access to the results, we omit those metrics.
-# After running this script, you must run stop_recording to stop the telemetry and collect the data.
+# After running this script, you must run end_recording to stop the telemetry and collect the data.
 
 WORKLOAD=$1
 
 # re-initialize results directory
-rm -f results/"$WORKLOAD"/blktrace_raw
-rm -f results/"$WORKLOAD"/seekwatcher
-rm -f results/"$WORKLOAD"/space
+rm -rf results/"$WORKLOAD"/blktrace_raw
+rm -rf results/"$WORKLOAD"/seekwatcher
+rm -rf results/"$WORKLOAD"/space
 mkdir -p results/"$WORKLOAD"/blktrace_raw
 mkdir -p results/"$WORKLOAD"/seekwatcher
 mkdir -p results/"$WORKLOAD"/space
@@ -25,6 +25,6 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/begin_recording.sh $(pwd)/results/${WORKLOAD}" >> logs 2>> logs &
+    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/begin_recording.sh $(pwd)/results/${WORKLOAD}" &
     i=$(($i+1))
 done

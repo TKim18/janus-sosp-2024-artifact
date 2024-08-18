@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "/proj/HeARTy/ceridwen-sosp-2024-artifact/hdfs/scripts"
+
 # build hdfs from source
 bash install-hdfs.sh
 

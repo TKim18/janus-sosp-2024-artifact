@@ -20,3 +20,4 @@ build
 dependency-reduced-pom.xml
 make-build-debug
 scripts/logs
+scripts/results
