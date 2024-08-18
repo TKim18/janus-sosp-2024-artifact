@@ -1,5 +1,4 @@
-workspace_dir="/proj/HeARTy/ceridwen-sosp-2024-artifact"
-hdfs ec -addPolicies -policyFile "${workspace_dir}/hdfs/scripts/configs/user_ec_policies.xml"
+hdfs ec -addPolicies -policyFile "/proj/HeARTy/ceridwen-sosp-2024-artifact/hdfs/scripts/configs/user_ec_policies.xml"
 
 # enable policies for Reed Solomon and Convertible Codes
 hdfs ec -enablePolicy -policy RS-5-3-8192k
