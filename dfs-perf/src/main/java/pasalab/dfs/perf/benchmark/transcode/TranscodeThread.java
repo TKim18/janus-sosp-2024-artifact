@@ -34,7 +34,7 @@ public class TranscodeThread extends PerfThread {
     Random generator = new Random(128);
     int transcodingCount = 0;
     int batchSize = 5;
-    int intervalInSeconds = 10;
+    int intervalInSeconds = 5;
     int initialDelayInSeconds = 5;
     int maxBufferSize = 1024 * 1024 * 40;
     int t,b,success;
@@ -55,8 +55,7 @@ public class TranscodeThread extends PerfThread {
           break;
         }
         // want to drop all datanode caches at this point
-        // && (System.currentTimeMillis() - lastCleared) > 30000 TODO: move this back
-        if (mId % 2 == 0 ) {
+        if (mId % 2 == 0 && (System.currentTimeMillis() - lastCleared) > 30000) {
           lastCleared = System.currentTimeMillis();
           // only one node for every client should execute
           Process p = Runtime.getRuntime().exec("/bin/bash /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/clear_cache.sh");

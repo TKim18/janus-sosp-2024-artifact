@@ -8,6 +8,7 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/clear_cache.sh" >> logs 2>> logs &
+    ssh "${machines[i]}.disks.HeARTy" "sudo /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/node_actions/clear_cache.sh" >> out 2>> out &
+    echo "success"
     i=$(($i+1))
 done
