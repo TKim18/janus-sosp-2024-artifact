@@ -11,6 +11,7 @@ import pasalab.dfs.perf.conf.PerfConf;
 import pasalab.dfs.perf.fs.PerfFileSystem;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -33,8 +34,8 @@ public class TranscodeThread extends PerfThread {
     Random generator = new Random(128);
     int transcodingCount = 0;
     int batchSize = 5;
-    int intervalInSeconds = 5;
-    int initialDelayInSeconds = 30;
+    int intervalInSeconds = 10;
+    int initialDelayInSeconds = 5;
     int maxBufferSize = 1024 * 1024 * 40;
     int t,b,success;
     byte[] buffer = new byte[maxBufferSize];
@@ -48,17 +49,22 @@ public class TranscodeThread extends PerfThread {
     try {
       Thread.sleep(1000 * initialDelayInSeconds);
       // keep running until killed
-      while (!files.isEmpty()) {
-//        if (terminated.get()) {
-//          LOG.info("Got a termination signal, ending transcode loop");
-//          break;
-//        }
+      while (true) {
+        if (terminated.get()) {
+          LOG.info("Got a termination signal, ending transcode loop");
+          break;
+        }
         // want to drop all datanode caches at this point
-        if (mId % 2 == 0 && (System.currentTimeMillis() - lastCleared) > 30000) {
+        // && (System.currentTimeMillis() - lastCleared) > 30000 TODO: move this back
+        if (mId % 2 == 0 ) {
           lastCleared = System.currentTimeMillis();
           // only one node for every client should execute
           Process p = Runtime.getRuntime().exec("/bin/bash /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/clear_cache.sh");
           p.waitFor();
+          if (p.getErrorStream().available() > 0) {
+            p.getErrorStream().read(result);
+            LOG.info(new String(result, StandardCharsets.UTF_8 ));
+          }
           if (p.getInputStream().available() > 0) {
             LOG.info("Successfully dropped buffer caches");
           }
@@ -93,7 +99,7 @@ public class TranscodeThread extends PerfThread {
     } catch (Exception e) {
       LOG.warn("Some kind of exception on the transcoding thread occurred " + e.getMessage());
     }
-    terminated.set(true);
+    // terminated.set(true);
   }
 
   private boolean doTranscode(FileMetadata file, byte[] buffer, Random generator) {

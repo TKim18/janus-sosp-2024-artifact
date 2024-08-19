@@ -65,10 +65,10 @@ public class SimpleWriteThread extends PerfThread {
     FileMetadata file;
     // keep running until killed
     while (fileNum < numFiles) {
-//      if (terminated.get()) {
-//        LOG.info("Got a termination signal, ending write loop");
-//        break;
-//      }
+      if (terminated.get()) {
+        LOG.info("Got a termination signal, ending write loop");
+        break;
+      }
       // we'll be writing files constantly
       // determine the file size based on some distribution
       fileSize = generateFileSize(generator);
@@ -94,17 +94,17 @@ public class SimpleWriteThread extends PerfThread {
       fileNum++;
     }
     // notify the transcode thread to stop working
-    while (true) {
-      try {
-        Thread.sleep(10000);
-        if (terminated.get()) {
-          return;
-        }
-      } catch (Exception e) {
-
-      }
-    }
-//    terminated.set(true);
+//    while (true) {
+//      try {
+//        Thread.sleep(10000);
+//        if (terminated.get()) {
+//          return;
+//        }
+//      } catch (Exception e) {
+//
+//      }
+//    }
+    terminated.set(true);
   }
 
   @Override
