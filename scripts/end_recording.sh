@@ -16,4 +16,4 @@ done
 
 # Results are all written out, use seekwatcher to record output
 cd ../seekwatcher && sudo python3 setup.py install && cd -
-seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h
+cd results/"$WORKLOAD"/seekwatcher && seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h && cd -

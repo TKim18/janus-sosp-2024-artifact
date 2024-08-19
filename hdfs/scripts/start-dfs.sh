@@ -14,5 +14,5 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PDSH_RCMD_TYPE="ssh"
 
 # start cluster
-"$HADOOP_HOME"/bin/hdfs namenode -format hdfs-cluster
+yes Y | "$HADOOP_HOME"/bin/hdfs namenode -format hdfs-cluster
 "$HADOOP_HOME"/sbin/start-dfs.sh

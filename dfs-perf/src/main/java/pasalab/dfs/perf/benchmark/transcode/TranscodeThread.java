@@ -170,11 +170,11 @@ public class TranscodeThread extends PerfThread {
 
   private String determineTargetPath(RedundancyStatus newStatus) {
     if (newStatus == RedundancyStatus.EC53) {
-      return "/ec53cc/simple-read-write/" + mTaskId;
+      return "/ec53rs/simple-read-write/" + mTaskId;
     } else if (newStatus == RedundancyStatus.EC103) {
-      return "/ec103cc/simple-read-write/" + mTaskId;
+      return "/ec103rs/simple-read-write/" + mTaskId;
     } else if (newStatus == RedundancyStatus.EC203) {
-      return "/ec203cc/simple-read-write/" + mTaskId;
+      return "/ec203rs/simple-read-write/" + mTaskId;
     } else {
       return null;
     }
