@@ -35,7 +35,7 @@ public class TranscodeThread extends PerfThread {
     int transcodingCount = 0;
     int batchSize = 5;
     int intervalInSeconds = 5;
-    int initialDelayInSeconds = 5;
+    int initialDelayInSeconds = 30;
     int maxBufferSize = 1024 * 1024 * 40;
     int t,b,success;
     byte[] buffer = new byte[maxBufferSize];
@@ -179,7 +179,7 @@ public class TranscodeThread extends PerfThread {
     } else if (newStatus == RedundancyStatus.EC103) {
       return "/ec103rs/simple-read-write/" + mTaskId;
     } else if (newStatus == RedundancyStatus.EC203) {
-      return "/ec203rs/simple-read-write/" + mTaskId;
+      return "/ec203cc/simple-read-write/" + mTaskId;
     } else {
       return null;
     }
@@ -192,7 +192,7 @@ public class TranscodeThread extends PerfThread {
     } else if (newStatus == RedundancyStatus.EC103) {
       schema = new ECSchema("RS", 10, 3);
     } else if (newStatus == RedundancyStatus.EC203) {
-      schema = new ECSchema("RS", 20, 3);
+      schema = new ECSchema("CC", 20, 3);
     } else {
       LOG.warn("Strange thing happened");
       schema = new ECSchema("RS", 2, 1);
