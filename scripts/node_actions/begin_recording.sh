@@ -8,7 +8,17 @@ HOST=${HOSTNAME%.disks*}
 
 # collect blktrace
 TIME=3000 # setting a max in case stop recording isn't called
-sudo blktrace -d "${PARTITION}" -D "${RESULTS_DIR}/blktrace_raw" -o "${HOST}-trace" -w "${TIME}" &
+run_blktrace=$(sudo blktrace -d "${PARTITION}" -D "${RESULTS_DIR}/blktrace_raw" -o "${HOST}-trace" -w "${TIME}" &)
+if ! run_blktrace; then
+  echo "Trying blktrace again"
+  if ! run_blktrace; then
+    exit
+  else
+    echo "Running blktrace"
+  fi
+else
+  echo "Running blktrace"
+fi
 
 while true
 do
