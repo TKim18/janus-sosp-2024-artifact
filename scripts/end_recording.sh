@@ -10,7 +10,7 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/end_recording.sh $(pwd)/results" &
+    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/end_recording.sh $(pwd)/results" &
     i=$(($i+1))
 done
 

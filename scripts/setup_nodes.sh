@@ -12,6 +12,6 @@ nservers=28
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/setup_node.sh" &
+    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/setup_node.sh $USER" &
     i=$(($i+1))
 done

@@ -3,7 +3,7 @@
 # This script will restart the hdfs cluster with no data
 
 # stop cluster
-ssh "h0.disks.HeARTy" "bash $(pwd)/../hdfs/scripts/stop-dfs.sh"
+ssh "h0.disks.HeARTy" "sudo $(pwd)/../hdfs/scripts/stop-dfs.sh"
 
 # delete all data
 machines=(
@@ -14,9 +14,9 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/wipe_node.sh" &
+    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/wipe_node.sh" &
     i=$(($i+1))
 done
 
 # start cluster and add folders
-ssh "h0.disks.HeARTy" "bash $(pwd)/../hdfs/scripts/start-dfs.sh && $(pwd)/../hdfs/scripts/add-policies.sh"
+ssh "h0.disks.HeARTy" "sudo $(pwd)/../hdfs/scripts/start-dfs.sh && $(pwd)/../hdfs/scripts/add-policies.sh"
