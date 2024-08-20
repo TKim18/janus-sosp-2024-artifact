@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script is used to setup the Narwhal nodes for experiments.
 # This includes setting up the high bandwidth network interface
 # and formatting the raw block devices on each node.

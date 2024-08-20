@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script syncs and clears the buffer cache on all Datanodes.
 
 machines=(

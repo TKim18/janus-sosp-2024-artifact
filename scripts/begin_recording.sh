@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script is used to prepare and start the telemetry that we use to collect data.
 # This script can be called in other experiment scripts with end_recording.
 # Specifically, the two things we'll collect during this artifact evaluation is

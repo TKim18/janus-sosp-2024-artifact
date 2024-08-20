@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script is used to stop the telemetry processes and collect results.
 
 WORKLOAD=$1

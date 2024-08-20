@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script can be run for both baseline and Ceridwen.
 # Pass in either as a string to the first parameter.
 # In this script since we're already on node h24, we have to
