@@ -11,10 +11,10 @@ WORKLOAD=$1
 
 # re-initialize results directory
 rm -rf results/"$WORKLOAD"/blktrace_raw
-rm -rf results/"$WORKLOAD"/seekwatcher
+rm -rf results/"$WORKLOAD"/output
 rm -rf results/"$WORKLOAD"/space
 mkdir -p results/"$WORKLOAD"/blktrace_raw
-mkdir -p results/"$WORKLOAD"/seekwatcher
+mkdir -p results/"$WORKLOAD"/output
 mkdir -p results/"$WORKLOAD"/space
 
 machines=(

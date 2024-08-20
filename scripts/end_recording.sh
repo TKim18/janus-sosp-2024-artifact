@@ -14,6 +14,14 @@ do
     i=$(($i+1))
 done
 
-# Results are all written out, use seekwatcher to record output
+# Results are all written out, aggregate all data
 cd ../seekwatcher && sudo python3 setup.py install && cd -
-cd results/"$WORKLOAD"/seekwatcher && seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h && cd -
+cd results/"$WORKLOAD"/output
+
+# aggregate blktrace output
+seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h
+
+# aggregate space results
+python3 aggregate_space.py "$WORKLOAD"
+
+cd -

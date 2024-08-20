@@ -2,9 +2,6 @@
 # This includes setting up the high bandwidth network interface
 # and formatting the raw block devices on each node.
 
-# This script must likely be run by one of the submitters as it
-# requires root access to execute some of the commands.
-
 machines=(
 "h0"
 "h1" "h2" "h3" "h4" "h5" "h6" "h7" "h8" "h9" "h10" "h11" "h12" "h13"
@@ -15,6 +12,6 @@ nservers=28
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/setup_node.sh" &
+    ssh "${machines[i]}.disks.HeARTy" "bash $(pwd)/node_actions/setup_node.sh" &
     i=$(($i+1))
 done
