@@ -22,7 +22,7 @@ if [ ! -d "$DFS_PERF_LOGS_DIR" ]; then
   mkdir -p $DFS_PERF_LOGS_DIR
 fi
 
-JAVACOMMAND="$JAVA -cp $DFS_PERF_CONF_DIR/:$DFS_PERF_JAR -Djava.library.path="/proj/HeARTy/dare-hadoop/hadoop-dist/target/hadoop-3.3.1/lib/native" -Dpasalab.dfs.perf.home=$DFS_PERF_HOME -Dpasalab.dfs.perf.logger.type="PERF_SLAVE_LOGGER" -Dlog4j.configuration=file:$DFS_PERF_CONF_DIR/log4j.properties $DFS_PERF_JAVA_OPTS pasalab.dfs.perf.DfsPerfSlave"
+JAVACOMMAND="$JAVA -cp $DFS_PERF_CONF_DIR/:$DFS_PERF_JAR -Djava.library.path="$HDFS_DIR/hadoop-dist/target/hadoop-3.3.1/lib/native" -Dpasalab.dfs.perf.home=$DFS_PERF_HOME -Dpasalab.dfs.perf.logger.type="PERF_SLAVE_LOGGER" -Dlog4j.configuration=file:$DFS_PERF_CONF_DIR/log4j.properties $DFS_PERF_JAVA_OPTS pasalab.dfs.perf.DfsPerfSlave"
 
 for (( i = $2; i <= $3; i ++))
 do

@@ -1,7 +1,7 @@
-cp configs/* "/proj/sosp24eval/janus-sosp-2024-artifact/hdfs/hadoop-dist/target/hadoop-3.3.1/etc/hadoop/"
+cp configs/* "${HDFS_DIR}/hadoop-dist/target/hadoop-3.3.1/etc/hadoop/"
 
 # set env variables
-export HADOOP_HOME="/proj/sosp24eval/janus-sosp-2024-artifact/hdfs/hadoop-dist/target/hadoop-3.3.1"
+export HADOOP_HOME="${HDFS_DIR}/hadoop-dist/target/hadoop-3.3.1"
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
 export HADOOP_MAPRED_HOME=${HADOOP_HOME}

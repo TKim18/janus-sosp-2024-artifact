@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "/proj/sosp24eval/janus-sosp-2024-artifact/hdfs/scripts"
+cd "${HDFS_DIR}/scripts"
 
 # build hdfs from source
 bash install-hdfs.sh

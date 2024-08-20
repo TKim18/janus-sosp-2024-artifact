@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-# TODO: read env var in python file
-
 import sys
 import os
 import numpy as np
@@ -64,12 +62,14 @@ if len(sys.argv) < 2:
     print("Please pass in the workload to aggregate")
     exit
 
-all_space, time = combine_files('${SCRIPTS_DIR}/results/' + sys.argv[1] + '/space')
+results_dir = os.environ['RESULTS_DIR']
+print(results_dir)
+all_space, time = combine_files(results_dir + '/' + sys.argv[1] + '/space')
 all_space = ignore_low_diff(all_space, 1048576)
 all_space = normalize_size(all_space)
 
 # write out all space to output directory
-with open(os.path.join('${SCRIPTS_DIR}/results/' + sys.argv[1] + '/output/total_space'), "w") as f:
+with open(os.path.join(results_dir + '/' + sys.argv[1] + '/output/total_space'), "w") as f:
     for space in all_space:
         f.write(str(space) + '\n')
 print(all_space[:100])
