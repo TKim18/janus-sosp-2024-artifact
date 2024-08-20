@@ -22,7 +22,7 @@ export DFS_PERF_DFS_ADDRESS="hdfs://h0-dfge:9000"
 #the workspace dir in DFS
 #export DFS_PERF_WORKSPACE="/tmp/dfs-perf-workspace"
 # unused field currently
-export DFS_PERF_WORKSPACE="/rr3"
+export DFS_PERF_WORKSPACE="/ec53cc"
 
 #the report output path
 export DFS_PERF_OUT_DIR="$DFS_PERF_HOME/result"

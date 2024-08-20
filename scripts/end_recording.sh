@@ -21,6 +21,7 @@ cd results/"$WORKLOAD"/output
 # aggregate blktrace output
 seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h
 
+cd -
 # aggregate space results
 python3 aggregate_space.py "$WORKLOAD"
 
