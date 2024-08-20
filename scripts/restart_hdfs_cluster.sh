@@ -14,7 +14,7 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/wipe_node.sh" &
+    ssh "${machines[i]}.disks.HeARTy" -o StrictHostKeyChecking=no "sudo $(pwd)/node_actions/wipe_node.sh" &
     i=$(($i+1))
 done
 
