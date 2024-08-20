@@ -12,12 +12,14 @@
 WORKLOAD=$1
 
 # re-initialize results directory
-rm -rf results/"$WORKLOAD"/blktrace_raw
-rm -rf results/"$WORKLOAD"/output
-rm -rf results/"$WORKLOAD"/space
-mkdir -p results/"$WORKLOAD"/blktrace_raw
-mkdir -p results/"$WORKLOAD"/output
-mkdir -p results/"$WORKLOAD"/space
+cd ${RESULTS_DIR}
+rm -rf "$WORKLOAD"/blktrace_raw
+rm -rf "$WORKLOAD"/output
+rm -rf "$WORKLOAD"/space
+mkdir -p "$WORKLOAD"/blktrace_raw
+mkdir -p "$WORKLOAD"/output
+mkdir -p "$WORKLOAD"/space
+cd -
 
 machines=(
 "h1" "h2" "h3" "h4" "h5" "h6" "h7" "h8" "h9" "h10" "h11" "h12" "h13"
@@ -27,6 +29,6 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" -o StrictHostKeyChecking=no "sudo $(pwd)/node_actions/begin_recording.sh $(pwd)/results/${WORKLOAD}" &
+    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/begin_recording.sh ${RESULTS_DIR}/${WORKLOAD}" &
     i=$(($i+1))
 done

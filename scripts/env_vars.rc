@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export EVAL_HOME_DIR="/proj/sosp24eval/janus-sosp-2024-artifact"
+export SCRIPTS_DIR="${EVAL_HOME_DIR}/scripts"
+export HDFS_DIR="${EVAL_HOME_DIR}/hdfs"
+export DFS_PERF_DIR="${EVAL_HOME_DIR}/dfs-perf"
+export SEEKWATCHER_DIR="${EVAL_HOME_DIR}/seekwatcher"
+export RESULTS_DIR="${EVAL_HOME_DIR}/results"
+
+export EXP_NAME="disks"
+export PROJ_NAME="sosp24eval"

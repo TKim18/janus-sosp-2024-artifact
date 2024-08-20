@@ -14,6 +14,6 @@ nservers=28
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" -o StrictHostKeyChecking=no "sudo $(pwd)/node_actions/setup_node.sh $USER" &
+    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/setup_node.sh ${USER}" &
     i=$(($i+1))
 done

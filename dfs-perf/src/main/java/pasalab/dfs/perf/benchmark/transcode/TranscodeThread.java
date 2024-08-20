@@ -58,7 +58,7 @@ public class TranscodeThread extends PerfThread {
         if (mId % 2 == 0 && (System.currentTimeMillis() - lastCleared) > 30000) {
           lastCleared = System.currentTimeMillis();
           // only one node for every client should execute
-          Process p = Runtime.getRuntime().exec("/bin/bash /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/clear_cache.sh");
+          Process p = Runtime.getRuntime().exec("/bin/bash /proj/sosp24eval/janus-sosp-2024-artifact/scripts/clear_cache.sh");
           p.waitFor();
           if (p.getErrorStream().available() > 0) {
             p.getErrorStream().read(result);

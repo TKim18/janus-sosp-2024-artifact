@@ -12,19 +12,16 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.disks.HeARTy" "sudo $(pwd)/node_actions/end_recording.sh $(pwd)/results" &
+    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" "sudo ${SCRIPTS_DIR}/node_actions/end_recording.sh" &
     i=$(($i+1))
 done
 
 # Results are all written out, aggregate all data
-cd ../seekwatcher && sudo python3 setup.py install && cd -
-cd results/"$WORKLOAD"/output
+sudo ./${SEEKWATCHER_DIR}/setup.py install
 
 # aggregate blktrace output
-seekwatcher -t /proj/HeARTy/ceridwen-sosp-2024-artifact/scripts/results/"$WORKLOAD"/blktrace_raw/h
+cd ${RESULTS_DIR}/"$WORKLOAD"/output
+seekwatcher -t ${RESULTS_DIR}/"$WORKLOAD"/blktrace_raw/h
 
-cd -
 # aggregate space results
-python3 aggregate_space.py "$WORKLOAD"
-
-cd -
+sudo ./${SCRIPTS_DIR}/aggregate_space.py "$WORKLOAD"

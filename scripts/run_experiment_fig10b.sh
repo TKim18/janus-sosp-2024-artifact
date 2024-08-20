@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script can be run for both baseline and Ceridwen.
+# This script can be run for both baseline and Janus.
 # Pass in either as a string to the first parameter.
 # In this script since we're already on node h24, we have to
 # 1. make sure the right properties are in and code set (dfs-perf can be in lifetime mode or vanilla mode)
@@ -10,10 +10,10 @@
 # 3. run write from node
 
 # first run baseline results
-./begin_recording.sh baseline
+sudo ./${SCRIPTS_DIR}/begin_recording.sh baseline
 sleep 10
 
-cd ../dfs-perf
+cd ${DFS_PERF_DIR}
 
 # set config
 sed -i 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
@@ -24,18 +24,17 @@ bash install-dfs-perf.sh
 
 # execute the workload
 ./execute.sh
-cd -
 
 sleep 10
 ./end_recording.sh baseline
 
-# then run ceridwen results
+# then run janus results
 sleep 10
 
-./begin_recording.sh ceridwen
+./begin_recording.sh janus
 sleep 10
 
-cd ../dfs-perf
+cd ${DFS_PERF_DIR}
 
 # set config
 sed -i 's/rr3/ec53cc/g' conf/dfs-perf-env.sh
@@ -49,4 +48,4 @@ bash install-dfs-perf.sh
 cd -
 
 sleep 10
-./end_recording.sh ceridwen
+./end_recording.sh janus

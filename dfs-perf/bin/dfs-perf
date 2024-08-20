@@ -43,7 +43,5 @@ for slave in $UNIQ_SLAVES; do
 done
 wait
 
-#$JAVA -cp $DFS_PERF_CONF_DIR/:$DFS_PERF_JAR -Dpasalab.dfs.perf.home=$DFS_PERF_HOME -Dpasalab.dfs.perf.logger.type="PERF_MASTER_LOGGER" -Dlog4j.configuration=file:$DFS_PERF_CONF_DIR/log4j.properties $DFS_PERF_JAVA_OPTS pasalab.dfs.perf.DfsPerfMaster $taskid $SLAVES $1
-
-$JAVA -cp $DFS_PERF_CONF_DIR/:$DFS_PERF_JAR -Djava.library.path="/proj/HeARTy/dare-hadoop/hadoop-dist/target/hadoop-3.3.1/lib/native" -Dpasalab.dfs.perf.home=$DFS_PERF_HOME -Dpasalab.dfs.perf.logger.type="PERF_MASTER_LOGGER" -Dlog4j.configuration=file:$DFS_PERF_CONF_DIR/log4j.properties $DFS_PERF_JAVA_OPTS pasalab.dfs.perf.DfsPerfMaster $taskid $SLAVES $1
+$JAVA -cp $DFS_PERF_CONF_DIR/:$DFS_PERF_JAR -Djava.library.path="/proj/sosp24eval/janus-sosp-2024-artifact/hdfs/hadoop-dist/target/hadoop-3.3.1/lib/native" -Dpasalab.dfs.perf.home=$DFS_PERF_HOME -Dpasalab.dfs.perf.logger.type="PERF_MASTER_LOGGER" -Dlog4j.configuration=file:$DFS_PERF_CONF_DIR/log4j.properties $DFS_PERF_JAVA_OPTS pasalab.dfs.perf.DfsPerfMaster $taskid $SLAVES $1
 
