@@ -11,3 +11,5 @@ sudo mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 -C 1048576 -O bigalloc 
 sudo mkdir /mnt/ext4
 sudo mount "/dev/${DISK}" "/mnt/ext4"
 sudo chown -R $usr:root /mnt/ext4
+
+echo "Done setting up nodes."

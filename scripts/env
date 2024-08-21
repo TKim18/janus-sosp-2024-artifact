@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export EVAL_HOME_DIR="/proj/sosp24eval/janus-sosp-2024-artifact"
+export SCRIPTS_DIR="${EVAL_HOME_DIR}/scripts"
+export HDFS_DIR="${EVAL_HOME_DIR}/hdfs"
+export DFS_PERF_DIR="${EVAL_HOME_DIR}/dfs-perf"
+export SEEKWATCHER_DIR="${EVAL_HOME_DIR}/seekwatcher"
+export RESULTS_DIR="${EVAL_HOME_DIR}/results"
+export ENV_VARS="${SCRIPTS_DIR}/environ"
+
+export EXP_NAME="evaldisks"
+export PROJ_NAME="sosp24eval"
+
+export HADOOP_HOME="${HDFS_DIR}/hadoop-dist/target/hadoop-3.3.1"
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+export HADOOP_MAPRED_HOME=${HADOOP_HOME}
+export HADOOP_COMMON_HOME=${HADOOP_HOME}
+export HADOOP_YARN_HOME=${HADOOP_HOME}
+export HADOOP_HDFS_HOME=${HADOOP_HOME}
+export YARN_HOME=${HADOOP_HOME}
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PDSH_RCMD_TYPE=ssh
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+export HADOOP_CLASSPATH=${HADOOP_HOME}/etc/hadoop:${HADOOP_HOME}/share/hadoop/common/lib/*:${HADOOP_HOME}/share/hadoop/common/*:${HADOOP_HOME}/share/hadoop/hdfs:${HADOOP_HOME}/share/hadoop/hdfs/lib/*:${HADOOP_HOME}/share/hadoop/hdfs/*:${HADOOP_HOME}/share/hadoop/mapreduce/lib/*:${HADOOP_HOME}/share/hadoop/mapreduce/*
+
+export http_proxy=http://proxy.pdl.cmu.edu:3128/
+export https_proxy=http://proxy.pdl.cmu.edu:3128/
