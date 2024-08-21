@@ -10,7 +10,7 @@ nservers=23
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/clear_cache.sh" >> out 2>> out &
+    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/clear_cache.sh" >> "${SCRIPTS_DIR}/out" 2>> "${SCRIPTS_DIR}/out" &
     echo "success"
     i=$(($i+1))
 done
