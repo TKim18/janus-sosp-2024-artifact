@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Likely this script will be run by the submitter, not the evaluator.
+
 # This script is used to setup the Narwhal nodes for experiments.
 # This includes setting up the high bandwidth network interface
 # and formatting the raw block devices on each node.
@@ -17,3 +19,6 @@ do
     ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/setup_node.sh ${USER}" &
     i=$(($i+1))
 done
+
+# Compile seekwatcher binary
+cd ${SEEKWATCHER_DIR} && sudo python3 ${SEEKWATCHER_DIR}/setup.py install && cd -
