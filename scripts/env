@@ -6,7 +6,7 @@ export HDFS_DIR="${EVAL_HOME_DIR}/hdfs"
 export DFS_PERF_DIR="${EVAL_HOME_DIR}/dfs-perf"
 export SEEKWATCHER_DIR="${EVAL_HOME_DIR}/seekwatcher"
 export RESULTS_DIR="${EVAL_HOME_DIR}/results"
-export ENV_VARS="${SCRIPTS_DIR}/environ"
+export ENV_VARS="${SCRIPTS_DIR}/env"
 
 export EXP_NAME="evaldisks"
 export PROJ_NAME="sosp24eval"

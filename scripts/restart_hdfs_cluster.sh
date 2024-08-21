@@ -2,8 +2,8 @@
 
 # This script will restart the hdfs cluster with no data
 
-# stop cluster
-ssh "h0.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "source ~/.bashrc && sudo ${HDFS_DIR}/scripts/stop-dfs.sh"
+# stop cluster, can't be run as root otherwise profile will be gone
+ssh "h0.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "source ~/.bashrc && bash ${HDFS_DIR}/scripts/stop-dfs.sh"
 
 # delete all data
 machines=(
@@ -19,4 +19,4 @@ do
 done
 
 # start cluster and add folders
-ssh "h0.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "source ~/.bashrc && sudo ${HDFS_DIR}/scripts/start-dfs.sh && sudo ${HDFS_DIR}/scripts/add-policies.sh"
+ssh "h0.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "source ~/.bashrc && bash ${HDFS_DIR}/scripts/start-dfs.sh && bash ${HDFS_DIR}/scripts/add-policies.sh"
