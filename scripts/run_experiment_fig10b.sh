@@ -10,7 +10,7 @@
 # 3. run write from node
 
 # first run baseline results
-sudo ${SCRIPTS_DIR}/begin_recording.sh baseline
+bash ${SCRIPTS_DIR}/begin_recording.sh baseline
 sleep 10
 
 cd ${DFS_PERF_DIR}
@@ -26,12 +26,13 @@ bash install-dfs-perf.sh
 ./execute.sh
 
 sleep 10
-sudo ${SCRIPTS_DIR}/end_recording.sh baseline
+bash ${SCRIPTS_DIR}/end_recording.sh
+sudo ${SCRIPTS_DIR}/collect_results.sh baseline
 
 # then run janus results
 sleep 10
 
-sudo ${SCRIPTS_DIR}/begin_recording.sh janus
+bash ${SCRIPTS_DIR}/begin_recording.sh janus
 sleep 10
 
 cd ${DFS_PERF_DIR}
@@ -48,4 +49,5 @@ bash install-dfs-perf.sh
 cd -
 
 sleep 10
-sudo ${SCRIPTS_DIR}/end_recording.sh janus
+bash ${SCRIPTS_DIR}/end_recording.sh
+sudo ${SCRIPTS_DIR}/collect_results.sh janus
