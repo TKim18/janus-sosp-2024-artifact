@@ -10,27 +10,27 @@
 # 3. run write from node
 
 # first run baseline results
-bash ${SCRIPTS_DIR}/begin_recording.sh baseline
-sleep 10
-
-cd ${DFS_PERF_DIR}
-
-# set config
-sed -i 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
-sed -i 's/"dfs.replication", "2"/"dfs.replication", "3"/g' src/main/java/pasalab/dfs/perf/fs/PerfFileSystemHdfs.java
-
-# build the project
-bash install-dfs-perf.sh
-
-# execute the workload
-./execute.sh
-
-sleep 10
-bash ${SCRIPTS_DIR}/end_recording.sh
-sudo ${SCRIPTS_DIR}/collect_results.sh baseline
-
-# then run janus results
-sleep 10
+#bash ${SCRIPTS_DIR}/begin_recording.sh baseline
+#sleep 10
+#
+#cd ${DFS_PERF_DIR}
+#
+## set config
+#sed -i 's/ec53cc/rr3/g' conf/dfs-perf-env.sh
+#sed -i 's/"dfs.replication", "2"/"dfs.replication", "3"/g' src/main/java/pasalab/dfs/perf/fs/PerfFileSystemHdfs.java
+#
+## build the project
+#bash install-dfs-perf.sh
+#
+## execute the workload
+#./execute.sh
+#
+#sleep 10
+#bash ${SCRIPTS_DIR}/end_recording.sh
+#sudo ${SCRIPTS_DIR}/collect_results.sh baseline
+#
+## then run janus results
+#sleep 10
 
 bash ${SCRIPTS_DIR}/begin_recording.sh janus
 sleep 10

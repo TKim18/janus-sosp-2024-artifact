@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export EVAL_HOME_DIR="/proj/sosp24eval/janus-sosp-2024-artifact"
 export SCRIPTS_DIR="${EVAL_HOME_DIR}/scripts"
 export HDFS_DIR="${EVAL_HOME_DIR}/hdfs"

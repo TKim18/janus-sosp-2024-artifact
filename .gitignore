@@ -21,3 +21,6 @@ dependency-reduced-pom.xml
 make-build-debug
 scripts/logs
 dfs-perf/logs
+dfs-perf/result
+results/
+scripts/out

@@ -1,4 +1,4 @@
-cp "${HDFS_DIR}/scripts/configs/*" "${HDFS_DIR}/hadoop-dist/target/hadoop-3.3.1/etc/hadoop/"
+cp ${HDFS_DIR}/scripts/configs/* "${HDFS_DIR}/hadoop-dist/target/hadoop-3.3.1/etc/hadoop/"
 
 # set env variables
 source ~/.bashrc
