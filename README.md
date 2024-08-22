@@ -24,9 +24,9 @@ execute and collect results. Note that the repository is already cloned at a glo
 1. Run `cd /proj/sosp24eval/janus-sosp-2024-artifact/scripts`. All of these scripts are available for you to run.
 2. Run `cat env > ~/.bashrc`.
 3. Run `source ~/.bashrc`.
-4. Run `./start_hdfs_cluster.sh`. This will build Janus from source and spin up an HDFS cluster using the Janus implementation.
+4. Run `./build_hdfs.sh`. This will build Janus from source.
 5. Run `mkdir ../results`.
-6. Run `./run_experiment_fig10b.sh`. This will execute the experiment for Figure 10b.
+6. Run `./run_experiment_fig10b.sh`. This will spin up a Janus cluster and execute the experiment for Figure 10b.
 
 ### Accessing and interpreting results
 The aggregated results of the experiment can be found at `../results/baseline/output` and `../results/janus/output`.

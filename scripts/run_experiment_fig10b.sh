@@ -9,6 +9,10 @@
 # 3. make sure to build dfs perf from source
 # 3. run write from node
 
+# call restarts with replication set to 3
+sed -i 's/"<value>2</value>"/"<value>3</value>"/g' ${HDFS_DIR}/scripts/configs/hdfs-site.xml
+bash ${SCRIPTS_DIR}/restart_hdfs_cluster.sh
+
 # first run baseline results
 bash ${SCRIPTS_DIR}/begin_recording.sh baseline
 sleep 10
