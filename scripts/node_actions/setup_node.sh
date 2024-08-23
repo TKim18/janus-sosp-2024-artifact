@@ -18,22 +18,6 @@ sudo adduser --home /proj/sosp24eval/home/evaluser --shell /bin/bash -uid 2001 -
 
 sudo cp /proj/sosp24eval/sosp24eval_sudoers /etc/sudoers.d/sosp24eval_sudoers
 
-# reminder/notes for creating tunnel on ops
-#	ssh ttk2@ops
-#	screen
-#	ssh -R:2022:h0.EXPNAME.sosp24eval:22 ops
-# Ctrl+a,d   (to disconnect screen)
-# ... a few momemts later ...
-#	ssh ttk2@ops
-#	screen -r
-# Ctrl+d to exit shell and kill ssh tunnel
-# Ctrl+d again to exit shell and exit screen
-
-# send sosp24eval.pem to reviewer(s)
-
-# then SOSP reviewer(s) client ssh command:
-#	ssh -p 2022 -l evaluser -i sospeval.pem ops.narwhal.pdl.cmu.edu
-
 # enable high-bandwidth NIC
 sudo /share/testbed/bin/network --fge up
 

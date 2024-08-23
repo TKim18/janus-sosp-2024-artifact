@@ -25,7 +25,7 @@ execute and collect results. Note that the repository is already cloned at a glo
 2. Run `cat env > ~/.bashrc`.
 3. Run `source ~/.bashrc`.
 4. Run `./build_hdfs.sh`. This will build Janus from source.
-5. Run `mkdir ../results`.
+5. Run `mkdir -p ../results`.
 6. Run `./run_experiment_fig10b.sh`. This will spin up a Janus cluster and execute the experiment for Figure 10b.
 
 ### Accessing and interpreting results
