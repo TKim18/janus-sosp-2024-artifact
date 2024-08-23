@@ -37,11 +37,6 @@ sudo cp /proj/sosp24eval/sosp24eval_sudoers /etc/sudoers.d/sosp24eval_sudoers
 # enable high-bandwidth NIC
 sudo /share/testbed/bin/network --fge up
 
-# format the block device
-DISK=`lsblk | awk '!$1{print a}{a=$1}END{print a}'`
-sudo mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 -C 1048576 -O bigalloc "/dev/${DISK}"
-sudo mkdir /mnt/ext4
-sudo mount "/dev/${DISK}" "/mnt/ext4"
-sudo chown -R evaluser:root /mnt/ext4
+cd /proj/sosp24eval/janus-sosp-2024-artifact/seekwatcher && sudo python3 setup.py install
 
 echo "Done setting up nodes."

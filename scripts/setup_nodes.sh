@@ -16,7 +16,7 @@ nservers=28
 i=0
 while [ $i != $nservers ]
 do
-    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/setup_node.sh ${USER}" &
+    ssh "${machines[i]}.${EXP_NAME}.${PROJ_NAME}" -o StrictHostKeyChecking=no "sudo ${SCRIPTS_DIR}/node_actions/setup_node.sh" &
     i=$(($i+1))
 done
 

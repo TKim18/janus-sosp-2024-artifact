@@ -10,7 +10,7 @@
 # 3. run write from node
 
 # call restarts with replication set to 3
-sed -i 's/"<value>2</value>"/"<value>3</value>"/g' ${HDFS_DIR}/scripts/configs/hdfs-site.xml
+sed -i 's/<value>2</value>/<value>3</value>/g' ${HDFS_DIR}/scripts/configs/hdfs-site.xml
 bash ${SCRIPTS_DIR}/restart_hdfs_cluster.sh
 
 # first run baseline results
@@ -34,6 +34,9 @@ bash ${SCRIPTS_DIR}/end_recording.sh
 sudo ${SCRIPTS_DIR}/collect_results.sh baseline
 
 # then run janus results
+sed -i 's/<value>3</value>/<value>2</value>/g' ${HDFS_DIR}/scripts/configs/hdfs-site.xml
+bash ${SCRIPTS_DIR}/restart_hdfs_cluster.sh
+
 sleep 10
 
 bash ${SCRIPTS_DIR}/begin_recording.sh janus
