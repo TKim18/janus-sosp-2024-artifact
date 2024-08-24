@@ -33,7 +33,7 @@ public class TranscodeThread extends PerfThread {
     FileMetadata file;
     Random generator = new Random(128);
     int transcodingCount = 0;
-    int batchSize = 3;
+    int batchSize = 5;
     int intervalInSeconds = 12;
     int initialDelayInSeconds = 30;
     int maxBufferSize = 1024 * 1024 * 40;
