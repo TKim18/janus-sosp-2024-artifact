@@ -1,0 +1,1 @@
+cd .. && cd hadoop-hdfs-project && mvn package -Pdist,native -DskipTests -Dtar -Dmaven.javadoc.skip=true && cd - && cd hadoop-dist/ && mvn clean package -Pdist,native -DskipTests -Dtar -Dmaven.javadoc.skip=true -Drequire.isal -Disal.lib=/usr/lib/ -Dbundle.isal && cd -
