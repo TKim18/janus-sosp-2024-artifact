@@ -13,12 +13,12 @@ WORKLOAD=$1
 
 # re-initialize results directory
 cd ${RESULTS_DIR}
-rm -rf "$WORKLOAD"/blktrace_raw
-rm -rf "$WORKLOAD"/output
-rm -rf "$WORKLOAD"/space
-mkdir -p "$WORKLOAD"/blktrace_raw
-mkdir -p "$WORKLOAD"/output
-mkdir -p "$WORKLOAD"/space
+sudo rm -rf "$WORKLOAD"/blktrace_raw
+sudo rm -rf "$WORKLOAD"/output
+sudo rm -rf "$WORKLOAD"/space
+sudo mkdir -p "$WORKLOAD"/blktrace_raw
+sudo mkdir -p "$WORKLOAD"/output
+sudo mkdir -p "$WORKLOAD"/space
 cd -
 
 machines=(
