@@ -26,9 +26,9 @@ execute and collect results. Note that the repository is already cloned at a glo
 3. Run `cat env > ~/.bashrc`. 
 4. Run `source ~/.bashrc`.
 5. Run `./build_hdfs.sh`. This will build Janus from source.
-6. Run `sudo setup_results.sh`. 
+6. Run `sudo ./setup_results.sh`. 
 7. Run `./run_experiment_fig10b.sh`. This will spin up a Janus cluster and execute the experiment for Figure 10b.
-8. Run `sudo aggregate_results.sh`. 
+8. Run `sudo ./aggregate_results.sh`. 
 
 ### Accessing and interpreting results
 The aggregated results of the experiment can be found at `../results/baseline/output` and `../results/janus/output`.
