@@ -11,16 +11,6 @@
 
 WORKLOAD=$1
 
-# re-initialize results directory
-cd ${RESULTS_DIR}
-sudo rm -rf "$WORKLOAD"/blktrace_raw
-sudo rm -rf "$WORKLOAD"/output
-sudo rm -rf "$WORKLOAD"/space
-sudo mkdir -p "$WORKLOAD"/blktrace_raw
-sudo mkdir -p "$WORKLOAD"/output
-sudo mkdir -p "$WORKLOAD"/space
-cd -
-
 machines=(
 "h1" "h2" "h3" "h4" "h5" "h6" "h7" "h8" "h9" "h10" "h11" "h12" "h13"
 "h14" "h15" "h16" "h17" "h18" "h19" "h20" "h21" "h22" "h23")

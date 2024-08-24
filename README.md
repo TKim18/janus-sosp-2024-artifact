@@ -21,13 +21,14 @@ savings, end-to-end latency savings). Once ssh'ed into the academic cluster node
 execute and collect results. Note that the repository is already cloned at a globally available directory.
 
 ### Steps
-0. Run `ssh h24.evaldisks.sosp24eval`. This moves you into the main client host.
-1. Run `cd /proj/sosp24eval/janus-sosp-2024-artifact/scripts`. All of these scripts are available for you to run.
-2. Run `cat env > ~/.bashrc`.
-3. Run `source ~/.bashrc`.
-4. Run `./build_hdfs.sh`. This will build Janus from source.
-5. Run `mkdir -p ../results`.
-6. Run `./run_experiment_fig10b.sh`. This will spin up a Janus cluster and execute the experiment for Figure 10b.
+1. Run `ssh h24.evaldisks.sosp24eval`. This moves you into the main client host.
+2. Run `cd /proj/sosp24eval/janus-sosp-2024-artifact/scripts`. All of these scripts are available for you to run.
+3. Run `cat env > ~/.bashrc`. 
+4. Run `source ~/.bashrc`.
+5. Run `./build_hdfs.sh`. This will build Janus from source.
+6. Run `sudo setup_results.sh`. 
+7. Run `./run_experiment_fig10b.sh`. This will spin up a Janus cluster and execute the experiment for Figure 10b.
+8. Run `sudo aggregate_results.sh`. 
 
 ### Accessing and interpreting results
 The aggregated results of the experiment can be found at `../results/baseline/output` and `../results/janus/output`.
@@ -36,8 +37,8 @@ There will be 3 files in each directory:
 2. trace.png: graphs of the disk I/O patterns.
 3. tput.csv: the data of the throughput graph in trace.png in csv form.
 
-It is likely (or probable) that the disk patterns do not look identical. That is simply due to the nondeterministic nature of
-our experiment and disk behavior.
+It is likely (or probable) that the disk patterns are not identical to the figures in the paper. 
+That is simply due to the nondeterministic nature of our experiment and disk behavior.
 
 # Contact
 Please contact ttk2@cs.cmu.edu for any issues/concerns/questions regarding the code or setup.
