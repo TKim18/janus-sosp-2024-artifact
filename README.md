@@ -21,6 +21,7 @@ savings, end-to-end latency savings). Once ssh'ed into the academic cluster node
 execute and collect results. Note that the repository is already cloned at a globally available directory.
 
 ### Steps
+0. Run `ssh h24.evaldisks.sosp24eval`. This moves you into the main client host.
 1. Run `cd /proj/sosp24eval/janus-sosp-2024-artifact/scripts`. All of these scripts are available for you to run.
 2. Run `cat env > ~/.bashrc`.
 3. Run `source ~/.bashrc`.
